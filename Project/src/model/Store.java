@@ -9,6 +9,8 @@ public class Store {
 	{
 		if (p == null || p.size() <= 0)
 			throw new IllegalArgumentException();
+		
+		products = p;
 	}
 	
 	public int GetProductCount()
