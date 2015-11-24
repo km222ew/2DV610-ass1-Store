@@ -1,7 +1,9 @@
 package tests;
+import java.util.ArrayList;
+
 import org.junit.Test;
 
-import model.Store;
+import model.*;
 
 public class StoreTests {
 
@@ -9,5 +11,11 @@ public class StoreTests {
 	public void ShouldThrowExceptionOnNullInput()
 	{
 		new Store(null);
+	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void ShouldThrowExceptionOnEmptyList()
+	{
+		new Store(new ArrayList<Product>());
 	}
 }
