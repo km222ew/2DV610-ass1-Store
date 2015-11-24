@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class Store {
 	ArrayList<Product> products;
+	public ShoppingCart sCart;
 	
 	public Store(ArrayList<Product> p)
 	{

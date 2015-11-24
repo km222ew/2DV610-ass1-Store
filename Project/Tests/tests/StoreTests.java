@@ -31,4 +31,14 @@ public class StoreTests {
 		
 		assertEquals(1, s.GetProductCount());
 	}
+	
+	@Test
+	public void ShoppingCartShouldNotBeNull()
+	{
+		ArrayList<Product> al = new ArrayList<Product>();
+		al.add(mock(Product.class));
+		Store s = new Store(al);
+		
+		assertNotEquals(s.sCart, null);
+	}
 }
