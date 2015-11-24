@@ -12,10 +12,12 @@ public class Store {
 			throw new IllegalArgumentException();
 		
 		products = p;
+		sCart = new ShoppingCart();
 	}
 	
 	public int GetProductCount()
 	{
 		return products.size();
 	}
+
 }
