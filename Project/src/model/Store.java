@@ -1,10 +1,12 @@
 package model;
 
+import java.util.ArrayList;
+
 public class Store {
 	
-	public Store(Object object)
+	public Store(ArrayList<Product> p)
 	{
-		if (object == null)
+		if (p == null)
 			throw new IllegalArgumentException();
 	}
 }

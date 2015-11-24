@@ -6,7 +6,7 @@ import model.Store;
 public class StoreTests {
 
 	@Test(expected = IllegalArgumentException.class)
-	public void test()
+	public void ShouldThrowExceptionOnNullInput()
 	{
 		new Store(null);
 	}
