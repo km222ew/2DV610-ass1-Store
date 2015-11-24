@@ -19,5 +19,9 @@ public class Store {
 	{
 		return products.size();
 	}
-
+	
+	public ShoppingCart GetShoppingCart()
+	{
+		return sCart;
+	}
 }

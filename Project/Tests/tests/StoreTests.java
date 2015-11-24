@@ -10,35 +10,43 @@ import static org.mockito.Mockito.mock;
 
 public class StoreTests {
 
+	//Writer: Hk, Assistance: Km 
 	@Test(expected = IllegalArgumentException.class)
 	public void ShouldThrowExceptionOnNullInput()
 	{
 		new Store(null);
 	}
 	
+	//Writer: Hk, Assistance: Km 
 	@Test(expected = IllegalArgumentException.class)
 	public void ShouldThrowExceptionOnEmptyList()
 	{
 		new Store(new ArrayList<Product>());
 	}
 	
+	//Writer: Hk, Assistance: Km 
 	@Test
 	public void StoreShouldContainProducts()
 	{
-		ArrayList<Product> al = new ArrayList<Product>();
-		al.add(mock(Product.class));
-		Store s = new Store(al);
+		Store s = MakeStore();
 		
 		assertEquals(1, s.GetProductCount());
 	}
 	
+	//Writer: Hk, Assistance: Km 
 	@Test
 	public void ShoppingCartShouldNotBeNull()
+	{
+		Store s = MakeStore();
+		
+		assertNotEquals(s.sCart, null);
+	}
+	
+	private Store MakeStore()
 	{
 		ArrayList<Product> al = new ArrayList<Product>();
 		al.add(mock(Product.class));
 		Store s = new Store(al);
-		
-		assertNotEquals(s.sCart, null);
+		return s;
 	}
 }
