@@ -10,12 +10,14 @@ import static org.mockito.Mockito.*;
 
 public class ShoppingCartTests {
 
+	//Writer: Hk, Assistance: Km 
 	@Test
 	public void ShouldInitializeProductMap()
 	{
 		assertTrue(new ShoppingCart().GetProducts() != null);
 	}
 	
+	//Writer: Hk, Assistance: Km 
 	@Test(expected = IllegalArgumentException.class)
 	public void ShouldThrowIllegalArgumentExceptionOnNullInput()
 	{
@@ -24,6 +26,7 @@ public class ShoppingCartTests {
 		sc.AddProduct(null, 1);
 	}
 	
+	//Writer: Hk, Assistance: Km 
 	@Test(expected = IllegalArgumentException.class)
 	public void ShouldThrowIllegalArgumentExceptionOnLessThanOneProduct()
 	{
@@ -32,6 +35,7 @@ public class ShoppingCartTests {
 		sc.AddProduct(mock(Product.class), 0);
 	}
 	
+	//Writer: Hk, Assistance: Km 
 	@Test
 	public void ShouldAddThreeProducts()
 	{
@@ -43,6 +47,7 @@ public class ShoppingCartTests {
 		assertEquals(3, sc.GetProducts().get(p).intValue());
 	}
 	
+	//Writer: Hk, Assistance: Km 
 	@Test
 	public void ShouldIncrementAmountWhenAddingSameProduct()
 	{
