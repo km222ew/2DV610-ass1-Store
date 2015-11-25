@@ -9,8 +9,8 @@ import model.ShoppingCart;
 public class ShoppingCartTests {
 
 	@Test
-	public void ShouldInitializeProductMap() 
+	public void ShouldInitializeProductMap()
 	{
-		assertTrue(new ShoppingCart().lhs != null);
+		assertTrue(new ShoppingCart().GetProducts() != null);
 	}
 }

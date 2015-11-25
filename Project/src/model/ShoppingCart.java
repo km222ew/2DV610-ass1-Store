@@ -4,11 +4,16 @@ import java.util.LinkedHashMap;
 
 public class ShoppingCart {
 	
-	public LinkedHashMap<Product, Integer> lhs;
+	private LinkedHashMap<Product, Integer> lhs;
 	
 	public ShoppingCart()
 	{
 		lhs = new LinkedHashMap<Product, Integer>();
+	}
+	
+	public LinkedHashMap<Product, Integer> GetProducts()
+	{
+		return lhs;
 	}
 
 	public void AddProduct(Product prod, int amount) 
