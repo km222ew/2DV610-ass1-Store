@@ -3,12 +3,13 @@ package model;
 import java.util.ArrayList;
 
 public class Store {
+	
 	private ArrayList<Product> products;
 	private ShoppingCart sCart;
 	
 	public Store(ArrayList<Product> p, ShoppingCart cart)
 	{
-		if (p == null || p.size() <= 0)
+		if (p == null || p.size() <= 0 || cart == null)
 			throw new IllegalArgumentException();
 		
 		products = p;
@@ -32,6 +33,6 @@ public class Store {
 
 	public void RemoveProductFromCart(Product prod, int amount) 
 	{
-		sCart.RemoveProductFromCart(prod, amount);		
+		sCart.RemoveProduct(prod, amount);		
 	}
 }

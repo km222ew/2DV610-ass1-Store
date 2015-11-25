@@ -53,6 +53,7 @@ public class StoreTests {
 		verify(s.GetShoppingCart(), times(1)).AddProduct(p, 1);
 	}
 	
+	//Writer: Km, Assistance: Hk 
 	@Test
 	public void ShouldRemoveProductFromCart()
 	{
@@ -60,7 +61,7 @@ public class StoreTests {
 		Product p = mock(Product.class);
 		s.RemoveProductFromCart(p, 1);
 		
-		verify(s.GetShoppingCart(), times(1)).RemoveProductFromCart(p, 1);
+		verify(s.GetShoppingCart(), times(1)).RemoveProduct(p, 1);
 	}
 	
 	private Store MakeStore()
