@@ -25,6 +25,7 @@ public class ProductTests {
 		new Product("jarge", 0);
 	}
 	
+	//Writer: Km, Assistance: Hk 
 	@Test
 	public void ShouldHaveProductName()
 	{
