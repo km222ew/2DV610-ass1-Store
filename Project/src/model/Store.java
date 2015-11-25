@@ -24,4 +24,9 @@ public class Store {
 	{
 		return sCart;
 	}
+
+	public void AddProductToCart(Product prod, int amount) {
+		// TODO Auto-generated method stub
+		
+	}
 }

@@ -6,7 +6,7 @@ import org.junit.Test;
 import model.*;
 
 import static org.junit.Assert.*;
-import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.*;
 
 public class StoreTests {
 
@@ -40,6 +40,16 @@ public class StoreTests {
 		Store s = MakeStore();
 		
 		assertNotEquals(s.sCart, null);
+	}
+	
+	@Test
+	public void ShouldAddProductToCart()
+	{
+		Store s = MakeStore();
+		Product p = mock(Product.class);
+		s.AddProductToCart(p, 1);
+		
+		verify(s.GetShoppingCart(), times(1)).AddProduct(p, 1);
 	}
 	
 	private Store MakeStore()
