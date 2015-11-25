@@ -23,4 +23,12 @@ public class ShoppingCartTests {
 		
 		sc.AddProduct(null, 1);
 	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void ShouldThrowIllegalArgumentExceptionOnLessThanOneProduct()
+	{
+		ShoppingCart sc = new ShoppingCart();
+		
+		sc.AddProduct(mock(Product.class), 0);
+	}
 }
