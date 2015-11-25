@@ -18,6 +18,7 @@ public class ProductTests {
 		new Product(null, 1);
 	}
 	
+	//Writer: Km, Assistance: Hk 
 	@Test(expected = IllegalArgumentException.class)
 	public void ShouldThrowExceptionOnTooLowPrice()
 	{
