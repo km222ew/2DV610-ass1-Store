@@ -32,6 +32,7 @@ public class ShoppingCart {
 
 	public void RemoveProduct(Product prod, int amount) 
 	{
-		
+		if (prod == null)
+			throw new IllegalArgumentException();
 	}
 }
