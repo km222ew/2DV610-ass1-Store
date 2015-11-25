@@ -105,7 +105,6 @@ public class ShoppingCartTests {
 		ShoppingCart sc = new ShoppingCart();
 		Product p = mock(Product.class);
 		sc.AddProduct(p, 5);
-		
 		sc.RemoveProduct(p, 6);
 		
 		assertFalse(sc.GetProducts().containsKey(p));
