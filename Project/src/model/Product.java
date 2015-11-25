@@ -3,6 +3,7 @@ package model;
 public class Product {
 	
 	private String name;
+	private int price;
 	
 	public Product(String ProdName, int price)
 	{
@@ -16,6 +17,11 @@ public class Product {
 	public String getName()
 	{
 		return name;
+	}
+	
+	public int getPrice()
+	{
+		return price;
 	}
 
 }

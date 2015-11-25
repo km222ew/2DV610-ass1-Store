@@ -34,4 +34,14 @@ public class ProductTests {
 		
 		assertEquals(name, jarge.getName());
 	}
+	
+	//Writer: Km, Assistance: Hk 
+	@Test
+	public void ShouldHavePrice()
+	{
+		int price = 5;
+		Product apple = new Product("apple", price);
+		
+		assertEquals(price, apple.getPrice());
+	}
 }
