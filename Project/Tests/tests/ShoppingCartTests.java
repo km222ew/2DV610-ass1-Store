@@ -42,4 +42,15 @@ public class ShoppingCartTests {
 		assertTrue(sc.GetProducts().containsKey(p));
 		assertEquals(3, sc.GetProducts().get(p).intValue());
 	}
+	
+	@Test
+	public void ShouldIncrementAmountWhenAddingSameProduct()
+	{
+		ShoppingCart sc = new ShoppingCart();
+		Product p = mock(Product.class);
+		sc.AddProduct(p, 3);
+		sc.AddProduct(p, 2);
+		
+		assertEquals(5, sc.GetProducts().get(p).intValue());
+	}
 }
