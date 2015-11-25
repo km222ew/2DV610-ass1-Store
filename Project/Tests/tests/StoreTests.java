@@ -39,9 +39,10 @@ public class StoreTests {
 	{
 		Store s = MakeStore();
 		
-		assertNotEquals(s.sCart, null);
+		assertNotEquals(s.GetShoppingCart(), null);
 	}
 	
+	//Writer: Km, Assistance: Hk 
 	@Test
 	public void ShouldAddProductToCart()
 	{

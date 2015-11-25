@@ -3,8 +3,8 @@ package model;
 import java.util.ArrayList;
 
 public class Store {
-	ArrayList<Product> products;
-	public ShoppingCart sCart;
+	private ArrayList<Product> products;
+	private ShoppingCart sCart;
 	
 	public Store(ArrayList<Product> p, ShoppingCart cart)
 	{
