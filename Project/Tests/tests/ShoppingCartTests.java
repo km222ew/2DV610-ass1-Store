@@ -40,6 +40,6 @@ public class ShoppingCartTests {
 		sc.AddProduct(p, 3);
 		
 		assertTrue(sc.GetProducts().containsKey(p));
-		assertEquals(sc.GetProducts().get(p).intValue(), 3);
+		assertEquals(3, sc.GetProducts().get(p).intValue());
 	}
 }
