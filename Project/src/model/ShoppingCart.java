@@ -34,5 +34,8 @@ public class ShoppingCart {
 	{
 		if (prod == null || amount <= 0)
 			throw new IllegalArgumentException();
+		
+		int temp = lhs.get(prod).intValue();
+		lhs.replace(prod, temp, temp - amount);
 	}
 }
