@@ -93,9 +93,9 @@ public class ShoppingCartTests {
 		Product p = mock(Product.class);
 		sc.AddProduct(p, 5);
 		
-		sc.RemoveProduct(p, 5);
+		sc.RemoveProduct(p, 4);
 		
-		assertEquals(0, sc.GetProducts().get(p).intValue());
+		assertEquals(1, sc.GetProducts().get(p).intValue());
 		}
 	/*
 	 * DELETE END
