@@ -84,6 +84,19 @@ public class ShoppingCartTests {
 		
 		sc.RemoveProduct(mock(Product.class), 0);
 	}
+	
+	//Writer: Hk, Assistance: Km 
+	@Test
+	public void ShouldRemoveFiveProducts()
+	{
+		ShoppingCart sc = new ShoppingCart();
+		Product p = mock(Product.class);
+		sc.AddProduct(p, 5);
+		
+		sc.RemoveProduct(p, 5);
+		
+		assertEquals(0, sc.GetProducts().get(p).intValue());
+		}
 	/*
 	 * DELETE END
 	 */
