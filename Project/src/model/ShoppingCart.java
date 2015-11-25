@@ -16,8 +16,8 @@ public class ShoppingCart {
 		
 	}
 
-	public void RemoveProductFromCart(Product prod, int amount) {
-		// TODO Auto-generated method stub
+	public void RemoveProductFromCart(Product prod, int amount) 
+	{
 		
 	}
 }
