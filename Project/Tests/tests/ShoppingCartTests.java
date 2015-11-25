@@ -17,6 +17,9 @@ public class ShoppingCartTests {
 		assertTrue(new ShoppingCart().GetProducts() != null);
 	}
 	
+	/*
+	 * ADD START
+	 */
 	//Writer: Hk, Assistance: Km 
 	@Test(expected = IllegalArgumentException.class)
 	public void ShouldThrowIllegalArgumentExceptionOnNullInput()
@@ -58,4 +61,21 @@ public class ShoppingCartTests {
 		
 		assertEquals(5, sc.GetProducts().get(p).intValue());
 	}
+	/*
+	 * ADD END
+	 */
+	
+	/*
+	 * DELETE START
+	 */
+	//Writer: Hk, Assistance: Km 
+		@Test(expected = IllegalArgumentException.class)
+		public void ShouldThrowIllegalArgumentExceptionWhenNullInput()
+		{
+			ShoppingCart sc = new ShoppingCart();
+			sc.RemoveProduct(null, 1);
+		}
+	/*
+	 * DELETE END
+	 */
 }
