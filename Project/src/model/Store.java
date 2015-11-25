@@ -6,13 +6,13 @@ public class Store {
 	ArrayList<Product> products;
 	public ShoppingCart sCart;
 	
-	public Store(ArrayList<Product> p)
+	public Store(ArrayList<Product> p, ShoppingCart cart)
 	{
 		if (p == null || p.size() <= 0)
 			throw new IllegalArgumentException();
 		
 		products = p;
-		sCart = new ShoppingCart();
+		sCart = cart;
 	}
 	
 	public int GetProductCount()

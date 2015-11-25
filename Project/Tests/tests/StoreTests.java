@@ -7,7 +7,6 @@ import model.*;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.*;
 
 public class StoreTests {
 
@@ -15,14 +14,14 @@ public class StoreTests {
 	@Test(expected = IllegalArgumentException.class)
 	public void ShouldThrowExceptionOnNullInput()
 	{
-		new Store(null);
+		new Store(null, mock(ShoppingCart.class));
 	}
 	
 	//Writer: Hk, Assistance: Km 
 	@Test(expected = IllegalArgumentException.class)
 	public void ShouldThrowExceptionOnEmptyList()
 	{
-		new Store(new ArrayList<Product>());
+		new Store(new ArrayList<Product>(), mock(ShoppingCart.class));
 	}
 	
 	//Writer: Hk, Assistance: Km 
@@ -47,7 +46,7 @@ public class StoreTests {
 	{
 		ArrayList<Product> al = new ArrayList<Product>();
 		al.add(mock(Product.class));
-		Store s = new Store(al);
+		Store s = new Store(al, mock(ShoppingCart.class));
 		return s;
 	}
 }
