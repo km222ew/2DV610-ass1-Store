@@ -97,6 +97,19 @@ public class ShoppingCartTests {
 		
 		assertEquals(1, sc.GetProducts().get(p).intValue());
 	}
+	
+	//Writer: Hk, Assistance: Km 
+	@Test
+	public void ShouldRemoveProductFromMap()
+	{
+		ShoppingCart sc = new ShoppingCart();
+		Product p = mock(Product.class);
+		sc.AddProduct(p, 5);
+		
+		sc.RemoveProduct(p, 5);
+		
+		assertFalse(sc.GetProducts().containsKey(p));
+	}
 	/*
 	 * DELETE END
 	 */
