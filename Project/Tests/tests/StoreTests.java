@@ -53,6 +53,16 @@ public class StoreTests {
 		verify(s.GetShoppingCart(), times(1)).AddProduct(p, 1);
 	}
 	
+	@Test
+	public void ShouldRemoveProductFromCart()
+	{
+		Store s = MakeStore();
+		Product p = mock(Product.class);
+		s.RemoveProductFromCart(p, 1);
+		
+		verify(s.GetShoppingCart(), times(1)).RemoveProductFromCart(p, 1);
+	}
+	
 	private Store MakeStore()
 	{
 		ArrayList<Product> al = new ArrayList<Product>();

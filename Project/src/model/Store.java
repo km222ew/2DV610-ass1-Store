@@ -29,4 +29,9 @@ public class Store {
 	{
 		sCart.AddProduct(prod, amount);		
 	}
+
+	public void RemoveProductFromCart(Product prod, int amount) {
+		// TODO Auto-generated method stub
+		
+	}
 }
