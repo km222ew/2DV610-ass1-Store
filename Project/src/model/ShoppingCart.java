@@ -10,8 +10,9 @@ public class ShoppingCart {
 		
 	}
 
-	public void AddProduct(Product prod, int amount) {
-		// TODO Auto-generated method stub
+	public void AddProduct(Product prod, int amount) 
+	{
+		
 		
 	}
 }
