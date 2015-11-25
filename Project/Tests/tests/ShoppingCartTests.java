@@ -87,7 +87,7 @@ public class ShoppingCartTests {
 	
 	//Writer: Hk, Assistance: Km 
 	@Test
-	public void ShouldRemoveFiveProducts()
+	public void ShouldRemoveFourOfFiveProducts()
 	{
 		ShoppingCart sc = new ShoppingCart();
 		Product p = mock(Product.class);
@@ -96,7 +96,7 @@ public class ShoppingCartTests {
 		sc.RemoveProduct(p, 4);
 		
 		assertEquals(1, sc.GetProducts().get(p).intValue());
-		}
+	}
 	/*
 	 * DELETE END
 	 */
