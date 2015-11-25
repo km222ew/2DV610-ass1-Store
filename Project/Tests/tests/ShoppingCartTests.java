@@ -31,4 +31,15 @@ public class ShoppingCartTests {
 		
 		sc.AddProduct(mock(Product.class), 0);
 	}
+	
+	@Test
+	public void ShouldAddThreeProducts()
+	{
+		ShoppingCart sc = new ShoppingCart();
+		Product p = mock(Product.class);
+		sc.AddProduct(p, 3);
+		
+		assertTrue(sc.GetProducts().containsKey(p));
+		assertEquals(sc.GetProducts().get(p).intValue(), 3);
+	}
 }
