@@ -21,7 +21,13 @@ public class ShoppingCart {
 		if (prod == null || amount <= 0)
 			throw new IllegalArgumentException();
 		
-		lhs.put(prod, amount);
+		if (lhs.containsKey(prod))
+		{
+			int temp = lhs.get(prod).intValue();
+			lhs.replace(prod, temp, temp + amount);
+		}
+		else
+			lhs.put(prod, amount);
 	}
 
 	public void RemoveProduct(Product prod, int amount) 
