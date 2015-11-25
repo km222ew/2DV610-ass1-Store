@@ -24,4 +24,13 @@ public class ProductTests {
 	{
 		new Product("jarge", 0);
 	}
+	
+	@Test
+	public void ShouldHaveProductName()
+	{
+		String productName = "jarge";
+		Product jarge = new Product(productName, 1);
+		
+		assertEquals(productName, jarge.getProductName());
+	}
 }
