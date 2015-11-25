@@ -38,7 +38,7 @@ public class ShoppingCart {
 		int temp = lhs.get(prod).intValue();
 		if (amount >= temp)
 			lhs.remove(prod);
-		
-		lhs.replace(prod, temp, temp - amount);
+		else
+			lhs.replace(prod, temp, temp - amount);
 	}
 }
