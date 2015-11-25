@@ -69,12 +69,21 @@ public class ShoppingCartTests {
 	 * DELETE START
 	 */
 	//Writer: Hk, Assistance: Km 
-		@Test(expected = IllegalArgumentException.class)
-		public void ShouldThrowIllegalArgumentExceptionWhenNullInput()
-		{
-			ShoppingCart sc = new ShoppingCart();
-			sc.RemoveProduct(null, 1);
-		}
+	@Test(expected = IllegalArgumentException.class)
+	public void ShouldThrowIllegalArgumentExceptionWhenNullInput()
+	{
+		ShoppingCart sc = new ShoppingCart();
+		sc.RemoveProduct(null, 1);
+	}
+	
+	//Writer: Hk, Assistance: Km 
+	@Test(expected = IllegalArgumentException.class)
+	public void ShouldThrowIllegalArgumentExceptionWhenLessThanOneProduct()
+	{
+		ShoppingCart sc = new ShoppingCart();
+		
+		sc.RemoveProduct(mock(Product.class), 0);
+	}
 	/*
 	 * DELETE END
 	 */
