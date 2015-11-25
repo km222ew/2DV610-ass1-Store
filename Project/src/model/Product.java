@@ -5,14 +5,14 @@ public class Product {
 	private String name;
 	private int price;
 	
-	public Product(String ProdName, int price)
+	public Product(String prodName, int prodPrice)
 	{
-		if (ProdName == null || price < 1) {
+		if (prodName == null || prodPrice < 1) {
 			throw new IllegalArgumentException();
 		}
 		
-		name = ProdName;
-		this.price = price;
+		name = prodName;
+		price = prodPrice;
 	}
 	
 	public String getName()
