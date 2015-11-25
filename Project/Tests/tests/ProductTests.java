@@ -27,11 +27,11 @@ public class ProductTests {
 	
 	//Writer: Km, Assistance: Hk 
 	@Test
-	public void ShouldHaveProductName()
+	public void ShouldHaveName()
 	{
-		String productName = "jarge";
-		Product jarge = new Product(productName, 1);
+		String name = "jarge";
+		Product jarge = new Product(name, 1);
 		
-		assertEquals(productName, jarge.getProductName());
+		assertEquals(name, jarge.getName());
 	}
 }

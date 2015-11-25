@@ -2,20 +2,20 @@ package model;
 
 public class Product {
 	
-	private String productName;
+	private String name;
 	
-	public Product(String name, int price)
+	public Product(String ProdName, int price)
 	{
-		if (name == null || price < 1) {
+		if (ProdName == null || price < 1) {
 			throw new IllegalArgumentException();
 		}
 		
-		productName = name;
+		name = ProdName;
 	}
 	
-	public String getProductName()
+	public String getName()
 	{
-		return productName;
+		return name;
 	}
 
 }
