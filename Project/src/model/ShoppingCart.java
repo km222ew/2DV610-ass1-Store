@@ -20,6 +20,8 @@ public class ShoppingCart {
 	{
 		if (prod == null || amount <= 0)
 			throw new IllegalArgumentException();
+		
+		lhs.put(prod, amount);
 	}
 
 	public void RemoveProduct(Product prod, int amount) 
