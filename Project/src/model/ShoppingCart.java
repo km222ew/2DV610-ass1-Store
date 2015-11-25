@@ -18,7 +18,7 @@ public class ShoppingCart {
 
 	public void AddProduct(Product prod, int amount) 
 	{
-		if (prod == null)
+		if (prod == null || amount <= 0)
 			throw new IllegalArgumentException();
 	}
 
