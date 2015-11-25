@@ -18,6 +18,9 @@ public class ProductTests {
 		new Product(null, 1);
 	}
 	
-
-
+	@Test(expected = IllegalArgumentException.class)
+	public void ShouldThrowExceptionOnTooLowPrice()
+	{
+		new Product("jarge", 0);
+	}
 }
