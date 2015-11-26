@@ -6,16 +6,13 @@ import org.junit.Before;
 import org.junit.Test;
 
 import model.Product;
-import model.ShoppingCart;
 import model.Store;
 import view.ConsoleWrapper;
 import view.StaticMessage;
 import view.StoreView;
 import static org.mockito.Mockito.*;
 
-import java.io.ByteArrayInputStream;
 import java.util.ArrayList;
-import java.util.InputMismatchException;
 
 public class StoreViewTests {
 	private ConsoleWrapper cw;
