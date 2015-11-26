@@ -44,15 +44,15 @@ public class ConsoleWrapperTests {
 	
 	//Writer: Km
 	@Test
-	public void ShouldReadAndReturnInteger()
+	public void ShouldReadAndReturnInput()
 	{
-		String data = "2";
+		String data = "hello there";
 		ByteArrayInputStream in = new ByteArrayInputStream(data.getBytes());	
 		System.setIn(in);
 		
-		int inputInt = cw.readInt(in);
+		String input = cw.readInput(in);
 	
-		assertEquals(Integer.parseInt(data), inputInt);
+		assertEquals(data, input);
 	}
 	
 	@After

@@ -10,14 +10,14 @@ public class ConsoleWrapper {
 		System.out.println(string);	
 	}
 
-	public int readInt(InputStream in) 
+	public String readInput(InputStream in) 
 	{
 		Scanner keyboard = new Scanner(in);
 		
-		int inputInt = keyboard.nextInt();
+		String input = keyboard.nextLine();
 		
 		keyboard.close();
 		
-		return inputInt;
+		return input;
 	}
 }
