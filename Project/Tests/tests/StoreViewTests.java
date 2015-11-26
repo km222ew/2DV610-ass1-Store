@@ -9,9 +9,10 @@ import view.StoreView;
 public class StoreViewTests {
 
 	@Test (expected = IllegalArgumentException.class)
-	public void ShouldThrowIllegalArgumentException()
+	public void ShouldThrowIllegalArgumentExceptionOnNullInput()
 	{
 		new StoreView(null);
 	}
+
 
 }
