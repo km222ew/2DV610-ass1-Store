@@ -64,6 +64,18 @@ public class StoreTests {
 		verify(s.GetShoppingCart(), times(1)).RemoveProduct(p, 1);
 	}
 	
+	@Test
+	public void ShouldReturnStoreContent()
+	{
+		Store s = MakeStore();
+		
+		ArrayList<Product> prods = s.GetProducts();
+		
+		assertTrue(prods != null);
+		
+		assertTrue(prods.size() > 0);
+	}
+	
 	private Store MakeStore()
 	{
 		ArrayList<Product> al = new ArrayList<Product>();

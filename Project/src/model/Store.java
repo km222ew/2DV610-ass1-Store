@@ -21,6 +21,11 @@ public class Store {
 		return products.size();
 	}
 	
+	public ArrayList<Product> GetProducts() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
 	public ShoppingCart GetShoppingCart()
 	{
 		return sCart;
@@ -35,4 +40,6 @@ public class Store {
 	{
 		sCart.RemoveProduct(prod, amount);		
 	}
+
+	
 }
