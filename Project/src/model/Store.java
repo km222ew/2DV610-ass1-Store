@@ -2,6 +2,7 @@ package model;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.LinkedHashMap;
 import java.util.List;
 
 public class Store {
@@ -28,6 +29,11 @@ public class Store {
 		return Collections.unmodifiableList(products);
 	}
 	
+	public LinkedHashMap<Product, Integer> GetReadOnlyCartContent() 
+	{
+		return sCart.GetProducts();
+	}
+	
 	public ShoppingCart GetShoppingCart()
 	{
 		return sCart;
@@ -42,6 +48,8 @@ public class Store {
 	{
 		sCart.RemoveProduct(prod, amount);		
 	}
+
+	
 
 	
 }

@@ -1,5 +1,6 @@
 package tests;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
 
 import org.junit.Test;
@@ -63,7 +64,7 @@ public class StoreTests {
 		s.RemoveProductFromCart(p, 1);
 		
 		verify(s.GetShoppingCart(), times(1)).RemoveProduct(p, 1);
-	}
+	}	
 	
 	//Writer: Km, Assistance: Hk 
 	@Test (expected = UnsupportedOperationException.class)
@@ -76,6 +77,17 @@ public class StoreTests {
 		prods.add(mock(Product.class));
 	}
 	
+	//Writer: Km, Assistance: Hk 
+	@Test (expected = UnsupportedOperationException.class)
+	public void ShouldReturnUnmodifiableCartContent()
+	{
+		Store s = MakeStore();
+		
+		LinkedHashMap<Product, Integer> cartContent = s.GetReadOnlyCartContent();		
+		
+		cartContent.put(mock(Product.class), 2);
+	}
+
 	private Store MakeStore()
 	{
 		ArrayList<Product> al = new ArrayList<Product>();
