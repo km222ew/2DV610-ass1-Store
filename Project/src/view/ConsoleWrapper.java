@@ -4,8 +4,6 @@ import java.io.InputStream;
 import java.util.Scanner;
 
 public class ConsoleWrapper {
-	
-	
 
 	public void printLine(String string) 
 	{
@@ -18,7 +16,8 @@ public class ConsoleWrapper {
 		
 		int inputInt = keyboard.nextInt();
 		
+		keyboard.close();
+		
 		return inputInt;
 	}
-
 }

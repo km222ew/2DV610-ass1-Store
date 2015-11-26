@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
 import java.io.PrintStream;
 
 import org.junit.After;
@@ -17,6 +18,9 @@ public class ConsoleWrapperTests {
 	private String newLine;
 	private final ByteArrayOutputStream out = new ByteArrayOutputStream();	
 	private ConsoleWrapper cw;
+	
+	private PrintStream stdOut = System.out;
+	private InputStream stdIn = System.in;
 	
 	@Before
 	public void init() 
@@ -38,6 +42,7 @@ public class ConsoleWrapperTests {
 		assertEquals("Hello, my name is Tester"+ newLine, out.toString());
 	}
 	
+	//Writer: Km
 	@Test
 	public void ShouldReadAndReturnInteger()
 	{
@@ -53,8 +58,8 @@ public class ConsoleWrapperTests {
 	@After
 	public void resetOutput () 
 	{
-	    System.setOut(System.out);
-	    System.setIn(System.in);
+	    System.setOut(stdOut);
+	    System.setIn(stdIn);
 	}
 
 }
