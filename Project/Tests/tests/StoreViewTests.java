@@ -13,7 +13,9 @@ import view.StaticMessage;
 import view.StoreView;
 import static org.mockito.Mockito.*;
 
+import java.io.ByteArrayInputStream;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 
 public class StoreViewTests {
 	private ConsoleWrapper cw;
@@ -73,5 +75,14 @@ public class StoreViewTests {
 		
 		verify(cw).printLine("1. Name: Stone | Price: 1");
 		verify(cw).printLine("2. Name: Mushroom | Price: 10");
+	}
+	
+	//Writer: Hk, Assistance: Km
+	@Test(expected = InputMismatchException.class)
+	public void ShouldThrowExceptionOnNonIntInput()
+	{
+		StoreView view = new StoreView(cw);
+		when(cw.readInput(System.in)).thenReturn("a");
+		int temp = view.NextInt();
 	}
 }

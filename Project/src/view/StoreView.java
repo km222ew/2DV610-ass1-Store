@@ -33,4 +33,9 @@ public class StoreView {
 			loop++;
 		}
 	}
+
+	public int NextInt()
+	{
+		return 0;
+	}
 }
