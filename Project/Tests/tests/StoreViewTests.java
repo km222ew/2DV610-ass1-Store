@@ -85,4 +85,13 @@ public class StoreViewTests {
 		when(cw.readInput(System.in)).thenReturn("a");
 		int temp = view.NextInt();
 	}
+	
+	//Writer: Hk, Assistance: Km
+	@Test
+	public void ShouldReturnInt()
+	{
+		StoreView view = new StoreView(cw);
+		when(cw.readInput(System.in)).thenReturn("3");
+		assertEquals(3, view.NextInt());
+	}
 }
