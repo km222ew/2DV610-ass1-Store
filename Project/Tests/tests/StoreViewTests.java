@@ -64,9 +64,6 @@ public class StoreViewTests {
 		when(p.getPrice()).thenReturn(1);
 		al.add(p);
 		
-		view.PrintAvailableProducts(store.GetReadOnlyProducts());
-		verify(cw).printLine("1. Name: Stone | Price: 1");
-		
 		p = mock(Product.class);
 		when(p.getName()).thenReturn("Mushroom");
 		when(p.getPrice()).thenReturn(10);
