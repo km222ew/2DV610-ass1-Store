@@ -13,4 +13,9 @@ public class StoreView {
 		
 		this.cw = cw;
 	}
+
+	public void Print(String s) 
+	{
+		
+	}
 }
