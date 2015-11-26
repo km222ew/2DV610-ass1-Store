@@ -27,6 +27,7 @@ public class ConsoleWrapperTests {
 		if (newLine == null) newLine = "\n";	    
 	}
 
+	//Writer: Km
 	@Test
 	public void ShouldPrintProvidedString() 
 	{
