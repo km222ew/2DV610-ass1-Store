@@ -51,15 +51,30 @@ public class StoreViewTests {
 	}
 	
 	//Writer: Hk, Assistance: Km
-	/*@Test
+	@Test
 	public void ShouldPrintAvailableProducts()
 	{
 		StoreView view = new StoreView(cw);
 		ArrayList<Product> al = new ArrayList<>();
-		al.add(mock(Product.class));
-		Store store = new Store(al, mock(ShoppingCart.class));
+		Store store = mock(Store.class);
+		when(store.GetReadOnlyProducts()).thenReturn(al);
+		
+		Product p = mock(Product.class);
+		when(p.getName()).thenReturn("Stone");
+		when(p.getPrice()).thenReturn(1);
+		al.add(p);
 		
 		view.PrintAvailableProducts();
-		//verify(cw, times(3)).printLine(string);
-	}*/
+		verify(cw).printLine("1. Name: Stone | Price: 1");
+		
+		p = mock(Product.class);
+		when(p.getName()).thenReturn("Mushroom");
+		when(p.getPrice()).thenReturn(10);
+		al.add(p);
+		
+		view.PrintAvailableProducts();
+		
+		verify(cw).printLine("1. Name: Stone | Price: 1");
+		verify(cw).printLine("2. Name: Mushroom | Price: 10");
+	}
 }
