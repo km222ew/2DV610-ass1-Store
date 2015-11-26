@@ -1,5 +1,9 @@
 package view;
 
+import java.util.List;
+
+import model.Product;
+
 public class StoreView {
 	
 	public ConsoleWrapper cw;
@@ -19,7 +23,7 @@ public class StoreView {
 		cw.printLine(s);
 	}
 
-	public void PrintAvailableProducts()
+	public void PrintAvailableProducts(List<Product> pList)
 	{
 		
 	}
