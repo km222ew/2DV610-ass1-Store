@@ -1,6 +1,8 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class Store {
 	
@@ -21,9 +23,9 @@ public class Store {
 		return products.size();
 	}
 	
-	public ArrayList<Product> GetProducts() 
-	{
-		return products;
+	public List<Product> GetProducts() 
+	{		
+		return Collections.unmodifiableList(products);
 	}
 	
 	public ShoppingCart GetShoppingCart()

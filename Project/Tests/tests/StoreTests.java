@@ -1,5 +1,6 @@
 package tests;
 import java.util.ArrayList;
+import java.util.List;
 
 import org.junit.Test;
 
@@ -64,16 +65,15 @@ public class StoreTests {
 		verify(s.GetShoppingCart(), times(1)).RemoveProduct(p, 1);
 	}
 	
-	@Test
-	public void ShouldReturnStoreContent()
+	//Writer: Km, Assistance: Hk 
+	@Test (expected = UnsupportedOperationException.class)
+	public void ShouldReturnUnmodifiableStoreContent()
 	{
 		Store s = MakeStore();
 		
-		ArrayList<Product> prods = s.GetProducts();
-		
-		assertTrue(prods != null);
-		
-		assertTrue(prods.size() > 0);
+		List<Product> prods = s.GetProducts();		
+
+		prods.add(mock(Product.class));
 	}
 	
 	private Store MakeStore()
