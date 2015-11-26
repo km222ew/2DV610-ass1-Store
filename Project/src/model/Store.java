@@ -48,8 +48,4 @@ public class Store {
 	{
 		sCart.RemoveProduct(prod, amount);		
 	}
-
-	
-
-	
 }
