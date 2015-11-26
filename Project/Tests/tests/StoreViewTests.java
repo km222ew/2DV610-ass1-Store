@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import view.ConsoleWrapper;
 import view.StoreView;
 
 public class StoreViewTests {
@@ -14,5 +15,11 @@ public class StoreViewTests {
 		new StoreView(null);
 	}
 
-
+	@Test
+	public void ShouldInitializeConsoleWrapper()
+	{
+		StoreView view = new StoreView(new ConsoleWrapper());
+		
+		assertTrue(view.cw != null);
+	}
 }
