@@ -21,9 +21,9 @@ public class Store {
 		return products.size();
 	}
 	
-	public ArrayList<Product> GetProducts() {
-		// TODO Auto-generated method stub
-		return null;
+	public ArrayList<Product> GetProducts() 
+	{
+		return products;
 	}
 	
 	public ShoppingCart GetShoppingCart()
