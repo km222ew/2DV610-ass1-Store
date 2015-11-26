@@ -9,12 +9,14 @@ import view.StoreView;
 
 public class StoreViewTests {
 
+	//Writer: Km, Assistance: Hk 
 	@Test (expected = IllegalArgumentException.class)
 	public void ShouldThrowIllegalArgumentExceptionOnNullInput()
 	{
 		new StoreView(null);
 	}
 
+	//Writer: Km, Assistance: Hk 
 	@Test
 	public void ShouldInitializeConsoleWrapper()
 	{
