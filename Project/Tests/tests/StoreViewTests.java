@@ -78,7 +78,7 @@ public class StoreViewTests {
 	}
 	
 	//Writer: Hk, Assistance: Km
-	@Test(expected = InputMismatchException.class)
+	@Test(expected = NumberFormatException.class)
 	public void ShouldThrowExceptionOnNonIntInput()
 	{
 		StoreView view = new StoreView(cw);
