@@ -40,6 +40,6 @@ public class StoreView {
 		
 		int te = Integer.parseInt(t);
 		
-		return te;
+		return 0;
 	}
 }
