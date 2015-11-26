@@ -25,6 +25,12 @@ public class StoreView {
 
 	public void PrintAvailableProducts(List<Product> pList)
 	{
-		
+		int loop = 1;
+		for(Product p : pList)
+		{
+			cw.printLine(loop + ". Name: " + p.getName() + " | Price: " + p.getPrice());
+			
+			loop++;
+		}
 	}
 }
