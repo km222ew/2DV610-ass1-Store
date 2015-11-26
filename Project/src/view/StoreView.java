@@ -16,6 +16,6 @@ public class StoreView {
 
 	public void Print(String s) 
 	{
-		
+		cw.printLine(s);
 	}
 }
