@@ -4,11 +4,14 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import view.StoreView;
+
 public class StoreViewTests {
 
-	@Test
-	public void test() {
-		fail("Not yet implemented");
+	@Test (expected = IllegalArgumentException.class)
+	public void ShouldThrowIllegalArgumentException()
+	{
+		new StoreView(null);
 	}
 
 }
