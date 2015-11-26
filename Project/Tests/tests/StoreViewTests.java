@@ -13,6 +13,7 @@ import view.StoreView;
 import static org.mockito.Mockito.*;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 
 public class StoreViewTests {
 	private ConsoleWrapper cw;
@@ -72,6 +73,32 @@ public class StoreViewTests {
 		
 		verify(cw).printLine("1. Name: Stone | Price: 1");
 		verify(cw).printLine("2. Name: Mushroom | Price: 10");
+	}
+	
+	//Writer: Hk
+	@Test
+	public void ShouldPrintAllShoppingCartProducts()
+	{
+		StoreView view = new StoreView(cw);
+		LinkedHashMap<Product, Integer> lhm = new LinkedHashMap<>();
+		Store store = mock(Store.class);
+		when(store.GetReadOnlyCartContent()).thenReturn(lhm);
+		
+		Product p = mock(Product.class);
+		when(p.getName()).thenReturn("Stone");
+		when(p.getPrice()).thenReturn(1);
+		lhm.put(p, 5);
+		
+		p = mock(Product.class);
+		when(p.getName()).thenReturn("Mushroom");
+		when(p.getPrice()).thenReturn(10);
+		lhm.put(p, 999);
+		
+		view.PrintCartProducts(store.GetReadOnlyCartContent());
+		
+		verify(cw).printLine("1. Name: Stone | Amount: 5 | Price: 1 | Total Price: 5");
+		verify(cw).printLine("2. Name: Mushroom | Amount: 999 | Price: 10 | Total Price: 9990");
+		verify(cw).printLine("Total Products: 1004, Final Price: 9995");
 	}
 	
 	//Writer: Hk, Assistance: Km
