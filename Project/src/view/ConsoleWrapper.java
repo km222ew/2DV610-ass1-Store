@@ -7,4 +7,9 @@ public class ConsoleWrapper {
 		System.out.println(string);	
 	}
 
+	public int readInt() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }
