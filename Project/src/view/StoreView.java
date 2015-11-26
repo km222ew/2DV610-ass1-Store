@@ -18,4 +18,9 @@ public class StoreView {
 	{
 		cw.printLine(s);
 	}
+
+	public void PrintAvailableProducts()
+	{
+		
+	}
 }

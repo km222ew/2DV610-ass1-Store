@@ -5,10 +5,15 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
+import model.Product;
+import model.ShoppingCart;
+import model.Store;
 import view.ConsoleWrapper;
 import view.StaticMessage;
 import view.StoreView;
 import static org.mockito.Mockito.*;
+
+import java.util.ArrayList;
 
 public class StoreViewTests {
 	private ConsoleWrapper cw;
@@ -35,6 +40,7 @@ public class StoreViewTests {
 		assertTrue(view.cw != null);
 	}
 	
+	//Writer: Hk, Assistance: Km
 	@Test
 	public void ShouldPrintMessage()
 	{
@@ -43,4 +49,17 @@ public class StoreViewTests {
 		view.Print(StaticMessage.SUPER_DUPER_MART_WELCOME);
 		verify(cw).printLine(StaticMessage.SUPER_DUPER_MART_WELCOME);
 	}
+	
+	//Writer: Hk, Assistance: Km
+	/*@Test
+	public void ShouldPrintAvailableProducts()
+	{
+		StoreView view = new StoreView(cw);
+		ArrayList<Product> al = new ArrayList<>();
+		al.add(mock(Product.class));
+		Store store = new Store(al, mock(ShoppingCart.class));
+		
+		view.PrintAvailableProducts();
+		//verify(cw, times(3)).printLine(string);
+	}*/
 }

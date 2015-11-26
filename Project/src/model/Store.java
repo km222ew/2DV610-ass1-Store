@@ -48,4 +48,9 @@ public class Store {
 	{
 		sCart.RemoveProduct(prod, amount);		
 	}
+
+	public void AddAvailableProduct(Product mock)
+	{
+		
+	}
 }

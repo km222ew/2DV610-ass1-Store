@@ -87,6 +87,16 @@ public class StoreTests {
 		
 		cartContent.put(mock(Product.class), 2);
 	}
+	
+	//Writer: Hk, Assistance: Km
+	@Test
+	public void ShouldAddNewProductToList()
+	{
+		Store s = MakeStore();
+		
+		s.AddAvailableProduct(mock(Product.class));
+		assertEquals(2, s.GetProductCount());
+	}
 
 	private Store MakeStore()
 	{
