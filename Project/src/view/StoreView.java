@@ -36,6 +36,10 @@ public class StoreView {
 
 	public int NextInt()
 	{
+		String t = cw.readInput(System.in);
+		
+		int te = Integer.parseInt(t);
+		
 		return 0;
 	}
 }
