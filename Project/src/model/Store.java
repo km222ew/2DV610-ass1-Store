@@ -2,8 +2,8 @@ package model;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Store {
 	
@@ -29,9 +29,9 @@ public class Store {
 		return Collections.unmodifiableList(products);
 	}
 	
-	public LinkedHashMap<Product, Integer> GetReadOnlyCartContent() 
+	public Map<Product, Integer> GetReadOnlyCartContent() 
 	{
-		return sCart.GetProducts();
+		return Collections.unmodifiableMap(sCart.GetProducts());
 	}
 	
 	public ShoppingCart GetShoppingCart()

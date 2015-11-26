@@ -2,6 +2,7 @@ package tests;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.junit.Test;
 
@@ -83,7 +84,7 @@ public class StoreTests {
 	{
 		Store s = MakeStore();
 		
-		LinkedHashMap<Product, Integer> cartContent = s.GetReadOnlyCartContent();		
+		Map<Product, Integer> cartContent = s.GetReadOnlyCartContent();		
 		
 		cartContent.put(mock(Product.class), 2);
 	}
