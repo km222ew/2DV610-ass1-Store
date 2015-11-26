@@ -15,10 +15,7 @@ import view.ConsoleWrapper;
 public class ConsoleWrapperTests {
 	
 	private String newLine;
-	private String inputData = "";
-	private final ByteArrayInputStream in = new ByteArrayInputStream(inputData.getBytes());	
-	private final ByteArrayOutputStream out = new ByteArrayOutputStream();
-	
+	private final ByteArrayOutputStream out = new ByteArrayOutputStream();	
 	private ConsoleWrapper cw;
 	
 	@Before
@@ -26,8 +23,7 @@ public class ConsoleWrapperTests {
 	{
 		cw = new ConsoleWrapper();
 		
-	    System.setOut(new PrintStream(out));
-	    System.setIn(in);
+	    System.setOut(new PrintStream(out));	    
 	    
 	    newLine = System.getProperty("line.separator");
 		if (newLine == null) newLine = "\n";	    
@@ -45,17 +41,20 @@ public class ConsoleWrapperTests {
 	@Test
 	public void ShouldReadAndReturnInteger()
 	{
-		inputData = "2";
+		String data = "2";
+		ByteArrayInputStream in = new ByteArrayInputStream(data.getBytes());	
+		System.setIn(in);
 		
-		int inputInt = cw.readInt();
+		int inputInt = cw.readInt(in);
 	
-		assertEquals(Integer.parseInt(inputData), inputInt);
+		assertEquals(Integer.parseInt(data), inputInt);
 	}
 	
 	@After
 	public void resetOutput () 
 	{
 	    System.setOut(System.out);
+	    System.setIn(System.in);
 	}
 
 }
