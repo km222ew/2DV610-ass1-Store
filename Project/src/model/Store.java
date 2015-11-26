@@ -23,7 +23,7 @@ public class Store {
 		return products.size();
 	}
 	
-	public List<Product> GetProducts() 
+	public List<Product> GetReadOnlyProducts() 
 	{		
 		return Collections.unmodifiableList(products);
 	}

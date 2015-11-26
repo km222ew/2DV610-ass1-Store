@@ -71,7 +71,7 @@ public class StoreTests {
 	{
 		Store s = MakeStore();
 		
-		List<Product> prods = s.GetProducts();		
+		List<Product> prods = s.GetReadOnlyProducts();		
 
 		prods.add(mock(Product.class));
 	}
