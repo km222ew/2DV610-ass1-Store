@@ -71,6 +71,18 @@ public class StoreControllerTests {
 		verify(sc.view).PrintAvailableProducts(sc.model.GetReadOnlyProducts());
 	}
 	
+	@Test
+	public void ShouldPrintProductsInCart()
+	{
+		when(sc.view.NextInt()).thenReturn(2).thenReturn(0);
+		
+		sc.Run();
+		
+		verify(sc.view, times(2)).Print(any(String.class));
+		verify(sc.view).Print(StaticMessage.PRINT_CART_TOP);
+		verify(sc.view).PrintCartProducts(sc.model.GetReadOnlyCartContent());
+	}
+	
 	private StoreController MakeStoreController()
 	{
 		return new StoreController(mock(Store.class), mock(StoreView.class));
