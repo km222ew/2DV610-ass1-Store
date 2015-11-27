@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 import static org.mockito.Mockito.*;
 import store.StoreController;
+import view.StaticMessage;
 import view.StoreView;
 import model.Store;
 
@@ -23,5 +24,20 @@ public class StoreControllerTests {
 		
 		assertTrue(contr.model != null);
 		assertTrue(contr.view != null);
+	}
+	
+	@Test
+	public void ShouldPresetWelcomeMessage()
+	{
+		StoreController sc = MakeStoreController();
+		
+		sc.Run();
+		
+		verify(sc.view).Print(StaticMessage.SUPER_DUPER_MART_WELCOME);
+	}
+	
+	private StoreController MakeStoreController()
+	{
+		return new StoreController(mock(Store.class), mock(StoreView.class));
 	}
 }
