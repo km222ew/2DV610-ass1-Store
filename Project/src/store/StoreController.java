@@ -40,7 +40,7 @@ public class StoreController {
 				choice = StaticMessage.DEFAULT_CHOICE;
 				break;			
 			case StaticMessage.SHOW_CART_COMMAND:
-				view.Print(StaticMessage.PRINT_CART_TOP);
+				view.Print(StaticMessage.PRINT_CART_TOP);				
 				view.PrintCartProducts(model.GetReadOnlyCartContent());
 				
 				choice = StaticMessage.DEFAULT_CHOICE;
