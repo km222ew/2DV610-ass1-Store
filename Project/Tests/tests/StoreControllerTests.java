@@ -4,9 +4,13 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 import static org.mockito.Mockito.*;
+
+import java.util.ArrayList;
+
 import store.StoreController;
 import view.StaticMessage;
 import view.StoreView;
+import model.Product;
 import model.Store;
 
 public class StoreControllerTests {
@@ -46,6 +50,22 @@ public class StoreControllerTests {
 		when(sc.view.NextInt()).thenReturn(0);
 		
 		assertFalse(sc.IsRunning());
+	}
+	
+	@Test
+	public void ShouldPrintAvailableStoreItems()
+	{
+		StoreController sc = MakeStoreController();
+		
+		sc.Run();
+		
+		when(sc.view.NextInt()).thenReturn(1);
+		verify(sc.view).Print(StaticMessage.PRINT_PRODUCTS_TOP);
+		
+		ArrayList<Product> al = new ArrayList<>();
+		al.add(mock(Product.class));
+		
+		verify(sc.view).PrintAvailableProducts(al);
 	}
 	
 	private StoreController MakeStoreController()

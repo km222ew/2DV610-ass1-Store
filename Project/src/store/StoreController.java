@@ -43,6 +43,8 @@ public class StoreController {
 	{
 		ArrayList<Product> al = FindProducts();
 		StoreController sc = new StoreController(new Store(al, new ShoppingCart()), new StoreView(new ConsoleWrapper()));
+		
+		sc.Run();
 	}
 	
 	public boolean IsRunning()
