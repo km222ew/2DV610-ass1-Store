@@ -6,6 +6,7 @@ import model.Product;
 import model.ShoppingCart;
 import model.Store;
 import view.ConsoleWrapper;
+import view.StaticMessage;
 import view.StoreView;
 
 public class StoreController {
@@ -26,7 +27,7 @@ public class StoreController {
 	
 	public void Run()
 	{
-		
+		view.Print(StaticMessage.SUPER_DUPER_MART_WELCOME);
 	}
 
 	public static void main(String[] args)
