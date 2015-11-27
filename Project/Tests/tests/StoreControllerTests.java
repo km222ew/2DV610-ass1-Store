@@ -66,7 +66,7 @@ public class StoreControllerTests {
 		
 		sc.Run();
 		
-		verify(sc.view, times(2)).Print(any(String.class));
+		verify(sc.view, times(3)).Print(any(String.class));
 		verify(sc.view).Print(StaticMessage.PRINT_PRODUCTS_TOP);
 		verify(sc.view).PrintAvailableProducts(sc.model.GetReadOnlyProducts());
 	}
@@ -79,7 +79,7 @@ public class StoreControllerTests {
 		
 		sc.Run();
 		
-		verify(sc.view, times(2)).Print(any(String.class));
+		verify(sc.view, times(3)).Print(any(String.class));
 		verify(sc.view).Print(StaticMessage.PRINT_CART_TOP);
 		verify(sc.view).PrintCartProducts(sc.model.GetReadOnlyCartContent());
 	}

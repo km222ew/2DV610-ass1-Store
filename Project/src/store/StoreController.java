@@ -14,7 +14,7 @@ public class StoreController {
 	public Store model;
 	public StoreView view;
 	private boolean isRunning = true;
-	private int choice;
+	private int choice = StaticMessage.DEFAULT_CHOICE;
 	
 	public StoreController(Store model, StoreView view)
 	{
@@ -28,25 +28,28 @@ public class StoreController {
 	}
 	
 	public void Run()
-	{
-		view.Print(StaticMessage.SUPER_DUPER_MART_WELCOME);
-		
+	{		
 		while (isRunning)
-		{					
-			choice = view.NextInt();
-			
+		{							
 			switch (choice) 
 			{
 			case StaticMessage.SHOW_PRODUCTS_COMMAND:				
 				view.Print(StaticMessage.PRINT_PRODUCTS_TOP);
 				view.PrintAvailableProducts(model.GetReadOnlyProducts());
 				
+				choice = StaticMessage.DEFAULT_CHOICE;
 				break;			
 			case StaticMessage.SHOW_CART_COMMAND:
 				view.Print(StaticMessage.PRINT_CART_TOP);
 				view.PrintCartProducts(model.GetReadOnlyCartContent());
 				
+				choice = StaticMessage.DEFAULT_CHOICE;
 				break;
+			case StaticMessage.DEFAULT_CHOICE:
+                view.Print(StaticMessage.SUPER_DUPER_MART_WELCOME);
+                choice = view.NextInt();
+
+                break;
 			case StaticMessage.EXIT_COMMAND:
 				isRunning = false;
 				
