@@ -40,6 +40,12 @@ public class StoreController {
 				view.PrintAvailableProducts(model.GetReadOnlyProducts());
 			}
 			
+			if (choice == StaticMessage.SHOW_CART_COMMAND) 
+			{
+				view.Print(StaticMessage.PRINT_CART_TOP);
+				view.PrintCartProducts(model.GetReadOnlyCartContent());
+			}
+			
 			if (choice == StaticMessage.EXIT_COMMAND)
 				isRunning = false;
 		}
