@@ -38,6 +38,11 @@ public class Store {
 	{
 		return sCart;
 	}
+	
+	public int GetShoppingCartSize()
+	{
+		return sCart.GetProducts().size();
+	}
 
 	public void AddProductToCart(Product prod, int amount) 
 	{

@@ -7,6 +7,7 @@ import org.junit.Test;
 import static org.mockito.Mockito.*;
 
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -14,6 +15,7 @@ import store.StoreController;
 import view.StaticMessage;
 import view.StoreView;
 import model.Product;
+import model.ShoppingCart;
 import model.Store;
 
 public class StoreControllerTests {
@@ -71,7 +73,7 @@ public class StoreControllerTests {
 		
 		sc.Run();
 		
-		verify(sc.view, times(3)).Print(any(String.class));
+		verify(sc.view, times(5)).Print(any(String.class));
 		verify(sc.view).Print(StaticMessage.PRINT_PRODUCTS_TOP);
 		verify(sc.view).PrintAvailableProducts(sc.model.GetReadOnlyProducts());
 	}
@@ -84,15 +86,24 @@ public class StoreControllerTests {
 		
 		sc.Run();
 		
-		verify(sc.view, times(3)).Print(any(String.class));
+		verify(sc.view, times(7)).Print(any(String.class));
 		verify(sc.view).Print(StaticMessage.PRINT_CART_TOP);
 		verify(sc.view).PrintCartProducts(sc.model.GetReadOnlyCartContent());
 	}
 	
+	
+	//Writer: Km, Hk
 	@Test
 	public void ShouldRemoveSelectedProductFromCart()
 	{
 		when(sc.view.NextInt()).thenReturn(2).thenReturn(1).thenReturn(1).thenReturn(0).thenReturn(0);
+
+		LinkedHashMap<Product, Integer> testMap = new LinkedHashMap<>();
+		testMap.put(mock(Product.class), 2);
+		
+		when(sc.model.GetReadOnlyCartContent()).thenReturn(testMap);
+		
+		when(sc.model.GetShoppingCartSize()).thenReturn(2);
 		
 		sc.Run();
 				
@@ -106,7 +117,7 @@ public class StoreControllerTests {
 	}
 	
 	private StoreController MakeStoreController()
-	{
+	{	
 		return new StoreController(mock(Store.class), mock(StoreView.class));
 	}
 }
