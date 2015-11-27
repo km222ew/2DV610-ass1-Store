@@ -5,6 +5,9 @@ import view.StoreView;
 
 public class StoreController {
 	
+	public Store model;
+	public StoreView view;
+	
 	public StoreController(Store model, StoreView view)
 	{
 		if (model == null || view == null) 
