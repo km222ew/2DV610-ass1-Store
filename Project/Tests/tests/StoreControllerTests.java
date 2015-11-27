@@ -71,6 +71,7 @@ public class StoreControllerTests {
 		verify(sc.view).PrintAvailableProducts(sc.model.GetReadOnlyProducts());
 	}
 	
+	//Writer: Km, Assistance: Hk
 	@Test
 	public void ShouldPrintProductsInCart()
 	{
@@ -82,6 +83,7 @@ public class StoreControllerTests {
 		verify(sc.view).Print(StaticMessage.PRINT_CART_TOP);
 		verify(sc.view).PrintCartProducts(sc.model.GetReadOnlyCartContent());
 	}
+
 	
 	private StoreController MakeStoreController()
 	{

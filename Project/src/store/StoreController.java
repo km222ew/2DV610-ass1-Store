@@ -14,6 +14,7 @@ public class StoreController {
 	public Store model;
 	public StoreView view;
 	private boolean isRunning = true;
+	private int choice;
 	
 	public StoreController(Store model, StoreView view)
 	{
@@ -32,22 +33,28 @@ public class StoreController {
 		
 		while (isRunning)
 		{					
-			int choice = view.NextInt();
+			choice = view.NextInt();
 			
-			if (choice == StaticMessage.SHOW_PRODUCTS_COMMAND) 
+			switch (choice) 
 			{
+			case StaticMessage.SHOW_PRODUCTS_COMMAND:				
 				view.Print(StaticMessage.PRINT_PRODUCTS_TOP);
 				view.PrintAvailableProducts(model.GetReadOnlyProducts());
-			}
-			
-			if (choice == StaticMessage.SHOW_CART_COMMAND) 
-			{
+				
+				break;			
+			case StaticMessage.SHOW_CART_COMMAND:
 				view.Print(StaticMessage.PRINT_CART_TOP);
 				view.PrintCartProducts(model.GetReadOnlyCartContent());
-			}
-			
-			if (choice == StaticMessage.EXIT_COMMAND)
+				
+				break;
+			case StaticMessage.EXIT_COMMAND:
 				isRunning = false;
+				
+				break;
+			default:
+				break;
+			}
+
 		}
 	}
 
