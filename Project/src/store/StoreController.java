@@ -14,6 +14,9 @@ public class StoreController {
 		{
 			throw new IllegalArgumentException();
 		}
+
+		this.model = model;
+		this.view = view;
 	}
 
 	public static void main(String[] args)
