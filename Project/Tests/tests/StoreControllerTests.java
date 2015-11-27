@@ -36,6 +36,18 @@ public class StoreControllerTests {
 		verify(sc.view).Print(StaticMessage.SUPER_DUPER_MART_WELCOME);
 	}
 	
+	@Test
+	public void ShouldQuitOnExitCommand()
+	{
+		StoreController sc = MakeStoreController();
+		
+		sc.Run();
+		
+		when(sc.view.NextInt()).thenReturn(0);
+		
+		assertFalse(sc.isRunning);
+	}
+	
 	private StoreController MakeStoreController()
 	{
 		return new StoreController(mock(Store.class), mock(StoreView.class));

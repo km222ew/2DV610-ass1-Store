@@ -13,6 +13,7 @@ public class StoreController {
 	
 	public Store model;
 	public StoreView view;
+	public boolean isRunning = true;
 	
 	public StoreController(Store model, StoreView view)
 	{
