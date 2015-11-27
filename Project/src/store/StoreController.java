@@ -13,7 +13,7 @@ public class StoreController {
 	
 	public Store model;
 	public StoreView view;
-	public boolean isRunning = true;
+	private boolean isRunning = true;
 	
 	public StoreController(Store model, StoreView view)
 	{
@@ -43,6 +43,11 @@ public class StoreController {
 	{
 		ArrayList<Product> al = FindProducts();
 		StoreController sc = new StoreController(new Store(al, new ShoppingCart()), new StoreView(new ConsoleWrapper()));
+	}
+	
+	public boolean IsRunning()
+	{
+		return isRunning;
 	}
 	
 	private static ArrayList<Product> FindProducts()

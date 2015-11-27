@@ -45,7 +45,7 @@ public class StoreControllerTests {
 		
 		when(sc.view.NextInt()).thenReturn(0);
 		
-		assertFalse(sc.isRunning);
+		assertFalse(sc.IsRunning());
 	}
 	
 	private StoreController MakeStoreController()
