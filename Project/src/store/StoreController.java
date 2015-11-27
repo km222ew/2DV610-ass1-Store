@@ -34,7 +34,7 @@ public class StoreController {
 			
 			int choice = view.NextInt();
 			
-			if (choice == StaticMessage.EXIT_MESSAGE)
+			if (choice == StaticMessage.EXIT_COMMAND)
 				isRunning = false;
 		}
 	}

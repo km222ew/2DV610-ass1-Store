@@ -60,11 +60,12 @@ public class StoreControllerTests {
 		sc.Run();
 		
 		when(sc.view.NextInt()).thenReturn(1);
-		verify(sc.view).Print(StaticMessage.PRINT_PRODUCTS_TOP);
 		
 		ArrayList<Product> al = new ArrayList<>();
 		al.add(mock(Product.class));
 		
+		verify(sc.view).Print(StaticMessage.SUPER_DUPER_MART_WELCOME);
+		verify(sc.view).Print(StaticMessage.PRINT_PRODUCTS_TOP);
 		verify(sc.view).PrintAvailableProducts(al);
 	}
 	
