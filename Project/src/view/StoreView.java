@@ -48,6 +48,23 @@ public class StoreView {
 
 	public void PrintCartProducts(Map<Product, Integer> pMap)
 	{
+		int totalProducts = 0;
+		int finalPrice = 0;
+		int loop = 1;
 		
+		for (Map.Entry<Product, Integer> prod : pMap.entrySet()) 
+		{
+			Product tempProd = prod.getKey();
+			int tempAmount = prod.getValue();
+			int totalPrice = tempProd.getPrice() * tempAmount;
+			
+			cw.printLine(loop + ". Name: " + tempProd.getName() + " | Amount: " + tempAmount + " | Price: " + tempProd.getPrice() + " | Total Price: " + totalPrice);
+			
+			totalProducts += tempAmount;
+			finalPrice += totalPrice;
+			loop += 1;
+		}
+		
+		cw.printLine("Total Products: " + totalProducts + ", Final Price: " + finalPrice);
 	}
 }
