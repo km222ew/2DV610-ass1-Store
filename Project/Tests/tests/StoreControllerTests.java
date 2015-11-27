@@ -57,16 +57,16 @@ public class StoreControllerTests {
 	{
 		StoreController sc = MakeStoreController();
 		
-		sc.Run();
+		when(sc.view.NextInt()).thenReturn(1).thenReturn(0);
 		
-		when(sc.view.NextInt()).thenReturn(1);
+		sc.Run();
 		
 		ArrayList<Product> al = new ArrayList<>();
 		al.add(mock(Product.class));
 		
-		verify(sc.view).Print(StaticMessage.SUPER_DUPER_MART_WELCOME);
+		verify(sc.view, times(2)).Print(StaticMessage.SUPER_DUPER_MART_WELCOME);
 		verify(sc.view).Print(StaticMessage.PRINT_PRODUCTS_TOP);
-		verify(sc.view).PrintAvailableProducts(al);
+		verify(sc.view).PrintAvailableProducts(sc.model.GetReadOnlyProducts());
 	}
 	
 	private StoreController MakeStoreController()

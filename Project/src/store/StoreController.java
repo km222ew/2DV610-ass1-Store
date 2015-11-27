@@ -34,6 +34,12 @@ public class StoreController {
 			
 			int choice = view.NextInt();
 			
+			if (choice == StaticMessage.SHOW_PRODUCTS_COMMAND) 
+			{
+				view.Print(StaticMessage.PRINT_PRODUCTS_TOP);
+				view.PrintAvailableProducts(model.GetReadOnlyProducts());
+			}
+			
 			if (choice == StaticMessage.EXIT_COMMAND)
 				isRunning = false;
 		}
