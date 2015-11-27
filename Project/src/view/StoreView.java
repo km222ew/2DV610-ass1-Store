@@ -1,6 +1,5 @@
 package view;
 
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -52,7 +51,7 @@ public class StoreView {
 		int finalPrice = 0;
 		int loop = 1;
 		
-		for (Map.Entry<Product, Integer> prod : pMap.entrySet()) 
+		for (Entry<Product, Integer> prod : pMap.entrySet()) 
 		{
 			Product tempProd = prod.getKey();
 			int tempAmount = prod.getValue();

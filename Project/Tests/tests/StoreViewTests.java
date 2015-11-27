@@ -4,14 +4,12 @@ import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
-
 import model.Product;
 import model.Store;
 import view.ConsoleWrapper;
 import view.StaticMessage;
 import view.StoreView;
 import static org.mockito.Mockito.*;
-
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 
@@ -107,7 +105,7 @@ public class StoreViewTests {
 	{
 		StoreView view = new StoreView(cw);
 		when(cw.readInput(System.in)).thenReturn("a");
-		int temp = view.NextInt();
+		view.NextInt();
 	}
 	
 	//Writer: Hk, Assistance: Km
