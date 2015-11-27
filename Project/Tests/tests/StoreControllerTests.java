@@ -2,25 +2,33 @@ package tests;
 
 import static org.junit.Assert.*;
 
+import org.junit.Before;
 import org.junit.Test;
 import static org.mockito.Mockito.*;
-
-import java.util.ArrayList;
 
 import store.StoreController;
 import view.StaticMessage;
 import view.StoreView;
-import model.Product;
 import model.Store;
 
 public class StoreControllerTests {
-
+	
+	private StoreController sc;
+	
+	@Before
+	public void Init()
+	{
+		sc = MakeStoreController();
+	}
+	
+	//Writer: Km
 	@Test (expected = IllegalArgumentException.class)
 	public void ShouldThrowIllegalArgumentExceptionOnNullInput() 
 	{
 		new StoreController(null, null);
 	}
 
+	//Writer: Km
 	@Test
 	public void ShouldAssignConstructorArguments()
 	{
@@ -30,41 +38,35 @@ public class StoreControllerTests {
 		assertTrue(contr.view != null);
 	}
 	
+	//Writer: Hk, Assistance: Km
 	@Test
 	public void ShouldPresetWelcomeMessage()
-	{
-		StoreController sc = MakeStoreController();
-		
+	{		
 		sc.Run();
 		
 		verify(sc.view).Print(StaticMessage.SUPER_DUPER_MART_WELCOME);
 	}
 	
+	//Writer: Hk, Assistance: Km
 	@Test
 	public void ShouldQuitOnExitCommand()
 	{
-		StoreController sc = MakeStoreController();
+		when(sc.view.NextInt()).thenReturn(0);		
 		
-		sc.Run();
-		
-		when(sc.view.NextInt()).thenReturn(0);
+		sc.Run();			
 		
 		assertFalse(sc.IsRunning());
 	}
 	
+	//Writer: Hk, Km
 	@Test
 	public void ShouldPrintAvailableStoreItems()
 	{
-		StoreController sc = MakeStoreController();
-		
 		when(sc.view.NextInt()).thenReturn(1).thenReturn(0);
 		
 		sc.Run();
 		
-		ArrayList<Product> al = new ArrayList<>();
-		al.add(mock(Product.class));
-		
-		verify(sc.view, times(2)).Print(StaticMessage.SUPER_DUPER_MART_WELCOME);
+		verify(sc.view, times(2)).Print(any(String.class));
 		verify(sc.view).Print(StaticMessage.PRINT_PRODUCTS_TOP);
 		verify(sc.view).PrintAvailableProducts(sc.model.GetReadOnlyProducts());
 	}

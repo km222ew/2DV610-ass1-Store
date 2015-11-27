@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 
 public class StoreViewTests {
+	
 	private ConsoleWrapper cw;
 	
 	@Before

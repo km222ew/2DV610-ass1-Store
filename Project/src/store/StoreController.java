@@ -28,10 +28,10 @@ public class StoreController {
 	
 	public void Run()
 	{
+		view.Print(StaticMessage.SUPER_DUPER_MART_WELCOME);
+		
 		while (isRunning)
-		{
-			view.Print(StaticMessage.SUPER_DUPER_MART_WELCOME);
-			
+		{					
 			int choice = view.NextInt();
 			
 			if (choice == StaticMessage.SHOW_PRODUCTS_COMMAND) 

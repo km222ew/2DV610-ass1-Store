@@ -23,7 +23,7 @@ public class ConsoleWrapperTests {
 	private InputStream stdIn = System.in;
 	
 	@Before
-	public void init() 
+	public void Init() 
 	{
 		cw = new ConsoleWrapper();
 		
@@ -56,7 +56,7 @@ public class ConsoleWrapperTests {
 	}
 	
 	@After
-	public void resetOutput () 
+	public void ResetOutput () 
 	{
 	    System.setOut(stdOut);
 	    System.setIn(stdIn);
